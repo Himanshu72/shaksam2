@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Saksham</title>
+  <%- include('link.ejs') %>
+  <style>
+    body{
+      height: 100vh;
+      width: 100%;
+      padding: 1%;
+      overflow: hidden;
+    }
+
+    .b1{
+        height: 47vh;
+        width: 100%;
+    }
+    </style>
+</head>
+<body >
+    <form  action="regC" method="GET">
+<button class="btn btn-primary b1 ">Register</button>
+</form>
+<form  action="logC" method="GET">
+<button class="btn btn-primary b1 ">Login</button>
+</form>
+  <%- include('scripts.ejs') %>
+</body>
+</html>
