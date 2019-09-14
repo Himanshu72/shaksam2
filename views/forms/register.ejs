@@ -6,25 +6,27 @@
         <head>
           <title>Saksham</title>
           <%- include('../link.ejs') %>
-          
+          <style>
+         
+          </style>
         </head>
         <body >
             <div class="container">
         <!-- Phone number -->
-        <form action="/customer/reg" method="POST" >
+        <form action="/customer/reg" method="POST"  >
             
             <p class="h4 mb-4 text-center">Sign up</p>
     
-            <div class="form-row mb-4">
+            <div class="form-row mb-4" style="margin-top:4%;" >
                 <div class="col-12">
                     <!-- First name -->
-                    <input type="text" id="defaultRegisterFormFirstName" name="fname" class="form-control" placeholder="First name">
+                    <input type="text" id="defaultRegisterFormFirstName"   name="fname" class="form-control" placeholder="First Name">
                 </div>
                 
                 <br>
                 <div class="col-12">
                     <!-- Last name -->
-                    <input type="text" id="defaultRegisterFormLastName" name="lname" class="form-control" placeholder="Last name">
+                    <input type="text" id="defaultRegisterFormLastName" name="lname" class="form-control" placeholder="Last Name">
                 </div>
             </div>
         
@@ -44,19 +46,26 @@
             <div class="row">
             <div class="col-12" >
         <br>
-                <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="ph"  placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="ph"  placeholder="Phone Number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
                 <br>
-                <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="collage" placeholder="collage or scholl name" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="gender"  placeholder="Gender" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               
                 <br>
-                <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="add"   placeholder="your address" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="collage" placeholder="College or University Name" aria-describedby="defaultRegisterFormPhoneHelpBlock">
                 <br>
-                <input type="password" id="defaultRegisterPhonePassword" class="form-control" placeholder="password" name="pass" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="add"   placeholder="Your Address" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                
                 <br>
-                <input type="password" id="defaultRegisterPhonePassword" class="form-control" name="cpass"  placeholder="confrim address" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="cur"   placeholder="Current Course Pursuing " aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                
                 <br>
-                <textarea class="form-control"  name="skill"  placeholder="Your skills"  ></textarea>
+                <input type="password" id="defaultRegisterPhonePassword" class="form-control" placeholder="Password" name="pass" aria-describedby="defaultRegisterFormPhoneHelpBlock">
                 <br>
-                <textarea class="form-control" name="antiskill"   placeholder="don't performe"  ></textarea>     
+                <input type="password" id="defaultRegisterPhonePassword" class="form-control" name="cpass"  placeholder="Confrim Password" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <br>
+                <textarea class="form-control"  name="skill"  placeholder="Skills you can perform"  ></textarea>
+                <br>
+                <textarea class="form-control" name="others"   placeholder="Anything else you would like us to know about you"  ></textarea>     
             </div>
     </div>
     

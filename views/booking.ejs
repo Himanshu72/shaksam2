@@ -6,7 +6,13 @@
 <head>
   <title>Saksham</title>
   <%- include('link.ejs') %>
-  
+  <style>
+  body{
+    height: 100vh;
+    width:100%;
+    overflow: hidden;
+    }
+</style>
 </head>
 <body >
     <div class="container">
@@ -16,14 +22,31 @@
     <p class="h4 mb-4 text-center">Booking</p>
     <div class="row">
         <div class="col-md-12">
-            <input type="text" class="form-control" placeholder="Event Location" >
+            <input type="text"  name="venu" class="form-control" placeholder="Event Location" >
         </div>
+        <div class="col-md-12">
+            <input type="text" name="language" class="form-control" placeholder="required Language">
+
+        </div>
+        <div class="col-6">
+            <input type="date" name="Date" class="form-control" placeholder="Date">
+            
+        </div>
+        <div class="col-6">
+            <input type="time" name="time" class="form-control" placeholder="Time">
+            
+        </div>
+        <div class="col-12" >
+            <input type="text" name="allow" class="form-control" placeholder="Education allowed up to">
+        </div>
+            
+
     </div>
     
 
     <!-- E-mail -->
 
-<!-- Sign up button -->
+<!-- Sign up button --> 
 <button class="btn btn-info my-4 btn-block" type="submit">Booking</button>
 
 <!-- Social register -->

@@ -2,15 +2,15 @@ var express = require('express');
 var router = express.Router();
 var mysql=require("mysql");
 let id=0;
-// var connection = mysql.createConnection({
-//   host     : 'remotemysql.com',
-//   port:3306,
-//   user : 'TUKN9qkrxO',
-//   password : 'b6JQaYWxLn',
-//   database : 'TUKN9qkrxO'
-// });
+ var connection = mysql.createConnection({
+   host     : 'remotemysql.com',
+   port:3306,
+   user : 'ulwRY5JFql',
+   password : 'LE2ZB0LGea',
+   database : 'ulwRY5JFql'
+ });
 
-/* GET home page. */
+ /* GET home page. */
 
 session = require('express-session');
 app = express();
@@ -25,6 +25,12 @@ router.get('/', function(req, res, next) {
   res.render('register');
   //res.render("error");
 });
+router.get("/booking:id",function(res,req,next){
+
+
+
+});
+
 
 router.get("/regC",function(req,res,next){
   res.render('forms/register',{true:null});
@@ -33,30 +39,27 @@ router.get("/regC",function(req,res,next){
 router.post("/customer/reg",function(req,res,next){
 
   console.log(req.body)
-  let {fname,lname,email,age,ph,collage,address,pass,cpass,skill,antiskill}=req.body;
+  let {fname,lname,email,age,ph,gender,collage,add,cur,pass,cpass,skill,others}=req.body;
+  
   
   if(pass==cpass){
+   
+
    id++;
-    
-   req.session.user = "amy"; 
+  
+   connection.query("INSERT INTO `customers` (`id`, `name`, `email`, `age`, `phone`, `address`, `current`, `college`, `skills`, `timestamp`, `antiskill`) VALUES ("+id+", '"+fname+"', '"+email+"', '"+age+"', '"+ ph +"', '"+add+"','"+cur+"', '"+ collage +"', '"+skill+"', CURRENT_TIMESTAMP, '"+others+"');", function (err, results, fields) {
+   console.log(err);
    res.render("booking");
+  
+  });
 
-  }else{
-    res.render('forms/register',{true:"false"});
+
+
   }
+});
 
-})
 
-function userAuth(userid){
 
-  if(userid==id){
-
-    return true;
-  }else{
-    return false
-  }
-
-}
 
 router.get("writer/register",function(req,res,next){
 
