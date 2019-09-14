@@ -9,6 +9,11 @@ let id=0;
    password : 'LE2ZB0LGea',
    database : 'ulwRY5JFql'
  });
+ connection.query("SELECT COUNT(id) AS count from customers;", function (err, results, fields) {
+  id=results[0].count;
+  
+ 
+ });
 
  /* GET home page. */
 
@@ -25,13 +30,6 @@ router.get('/', function(req, res, next) {
   res.render('register');
   //res.render("error");
 });
-router.get("/booking:id",function(res,req,next){
-
-
-
-});
-
-
 router.get("/regC",function(req,res,next){
   res.render('forms/register',{true:null});
 });
@@ -49,8 +47,13 @@ router.post("/customer/reg",function(req,res,next){
   
    connection.query("INSERT INTO `customers` (`id`, `name`, `email`, `age`, `phone`, `address`, `current`, `college`, `skills`, `timestamp`, `antiskill`) VALUES ("+id+", '"+fname+"', '"+email+"', '"+age+"', '"+ ph +"', '"+add+"','"+cur+"', '"+ collage +"', '"+skill+"', CURRENT_TIMESTAMP, '"+others+"');", function (err, results, fields) {
    console.log(err);
-   res.render("booking");
-  
+   if(err){
+     id--
+    res.render("forms/register");
+    }
+
+   res.render("/booking",{data:null});
+   
   });
 
 
